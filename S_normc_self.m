@@ -1,0 +1,9 @@
+function R=S_normc_self(D)
+S = D'*D;
+I = eye(size(D,2));
+Q = S.*I;
+Q = Q*ones(size(D,2),1);
+Q = Q';
+Q = sqrt(Q);
+Q = 1./Q;
+R = D.*repmat(Q,size(D,1),1);
